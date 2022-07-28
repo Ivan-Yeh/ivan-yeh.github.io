@@ -3,7 +3,7 @@
 }
 
 .u-section-1 .u-sheet-1 {
-  min-height: 100vh;
+  min-height: 32px;
 }
 
 .u-section-1 .u-image-1 {
@@ -11,7 +11,8 @@
   height: 440px;
   background-image: url("images/profile.jpeg");
   background-position: 50% 50%;
-  margin: 168px auto 0;
+  box-shadow: 5px 5px 20px 0 rgba(0,0,0,0.4);
+  margin: 50px auto 0;
 }
 
 .u-section-1 .u-text-1 {
@@ -26,7 +27,13 @@
   line-height: 1.8;
   font-size: 1.375rem;
   width: 836px;
-  margin: 40px auto 0;
+  margin: 40px auto 50px;
+}
+
+@media (max-width: 1199px) {
+  .u-section-1 .u-sheet-1 {
+    min-height: 1088px;
+  }
 }
 
 @media (max-width: 991px) {
@@ -37,7 +44,7 @@
 
 @media (max-width: 767px) {
   .u-section-1 .u-sheet-1 {
-    min-height: 1037px;
+    min-height: 1194px;
   }
 
   .u-section-1 .u-text-1 {
@@ -47,12 +54,13 @@
   .u-section-1 .u-text-2 {
     font-size: 1.25rem;
     width: 540px;
+    margin-bottom: 60px;
   }
 }
 
 @media (max-width: 575px) {
   .u-section-1 .u-sheet-1 {
-    min-height: 937px;
+    min-height: 1094px;
   }
 
   .u-section-1 .u-image-1 {
