@@ -871,7 +871,6 @@
 .u-section-3 .u-layout-wrap-1 {
   margin-top: 60px;
   margin-bottom: 60px;
-  position: relative;
 }
 
 .u-section-3 .u-layout-cell-1 {
@@ -899,6 +898,8 @@
   width: 80px;
   height: 80px;
   box-shadow: 5px 5px 20px 0 rgba(0,0,0,0.4);
+  background-image: url("images/gdsc.png");
+  background-position: 50% 50%;
   margin: 26px auto 0;
 }
 
@@ -969,6 +970,10 @@
 @media (max-width: 1199px) {
   .u-section-3 .u-sheet-1 {
     min-height: 360px;
+  }
+
+  .u-section-3 .u-layout-wrap-1 {
+    position: relative;
   }
 
   .u-section-3 .u-layout-cell-1 {
@@ -1100,7 +1105,6 @@
 .u-section-4 .u-layout-wrap-1 {
   margin-top: 60px;
   margin-bottom: 60px;
-  position: relative;
 }
 
 .u-section-4 .u-layout-cell-1 {
@@ -1163,6 +1167,10 @@
 @media (max-width: 1199px) {
   .u-section-4 .u-sheet-1 {
     min-height: 430px;
+  }
+
+  .u-section-4 .u-layout-wrap-1 {
+    position: relative;
   }
 
   .u-section-4 .u-layout-cell-1 {
