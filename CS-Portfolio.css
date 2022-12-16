@@ -81,8 +81,8 @@
 
 .u-section-2 .u-image-1 {
   min-height: 379px;
-  background-image: url("images/Screenshot2022-12-16at12.34.02pm.png");
-  background-position: 81.02% 50%;
+  background-image: url("images/Screenshot2022-12-16at7.04.11pm.png");
+  background-position: 0% 50%;
 }
 
 .u-section-2 .u-container-layout-3 {
@@ -157,6 +157,7 @@
   .u-section-2 .u-image-1 {
     min-height: 587px;
     background-position: 29.55% 100%;
+    background-size: auto 110%;
   }
 
   .u-section-2 .u-layout-cell-4 {
@@ -210,7 +211,6 @@
 
   .u-section-2 .u-image-1 {
     min-height: 561px;
-    background-size: auto 110%;
   }
 
   .u-section-2 .u-layout-cell-4 {
