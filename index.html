@@ -23,29 +23,15 @@
     <body>
         
         <!--================Header Menu Area =================-->
-        <header class="header_area">
-            <div class="main_menu">
-            	<nav class="navbar navbar-expand-lg navbar-light">
-					<div class="container box_1620">
-						<!-- Brand and toggle get grouped for better mobile display -->
-						<a class="navbar-brand logo_h" href="index.html"><img src="img/logo.png" alt="" width="150"></a>
-						<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-						</button>
-						<!-- Collect the nav links, forms, and other content for toggling -->
-						<div class="collapse navbar-collapse offset" id="navbarSupportedContent">
-							<ul class="nav navbar-nav menu_nav ml-auto">
-								<li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li> 
-								<li class="nav-item"><a class="nav-link" href="resume.html">Resume</a></li> 
-								<li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
-							</ul>
-						</div> 
-					</div>
-            	</nav>
-            </div>
-        </header>
+		<div id="header"></div>
+
+		<script>
+		fetch("header.html")
+			.then(response => response.text())
+			.then(data => {
+			document.getElementById("header").innerHTML = data;
+			});
+		</script>
         <!--================Header Menu Area =================-->
         
         <!--================Home Banner Area =================-->
@@ -61,7 +47,7 @@
 								<div class="personal_text">
 									<h6>Hello, I'm</h6>
 									<h3>Ivan Yeh</h3>
-									<h4>Computer Science • Machine Learning • Data Science • Quantitative Finance</h4>
+									<h4>Computer Science • Machine Learning • Deep Learning • Data Science • Quantitative Finance</h4>
 									<h5>University of Sydney 🇦🇺</h5>
 									<ul class="list personal_social">
 										<li><a href="https://www.linkedin.com/in/ivan-yeh-58367122b/" target="_blank"><i class="fa fa-linkedin"></i></a></li>
@@ -84,7 +70,10 @@
         			<div class="col-lg-6">
         				<div class="welcome_text">
         					<h4>About Me</h4>
-        					<p>I am a 3rd-year Bachelor of Advanced Computing student at the University of Sydney with a double major in Computational Data Science and Financial Mathematics + Statistics.</p>
+        					<p>
+								I am a 4th-year Bachelor of Advanced Computing (Honours) student at the University of Sydney with a double major in Computational Data Science and Financial Mathematics + Statistics. 
+								I am currently working as a Deep Learning Student Researcher at the University of Sydney, focusing on large language model uncertainty estimation and calibration.
+							</p>
         				</div>
         			</div>
         			<div class="col-lg-6">
@@ -98,7 +87,7 @@
         					<div class="skill_main">
 								<div class="skill_item">
 									<h3>Computer Science</h3>
-									<h4>Machine Learning, Data Structures and Algorithms, Operating Systems, Software Engineering, Data Analysis, Data Engineering</h4>
+									<h4>Machine Learning, Deep Learning, Data Structures and Algorithms, Operating Systems, Software Engineering, Data Analysis, Data Engineering</h4>
 								</div>
 							</div>
         					<div class="skill_main">
@@ -149,11 +138,23 @@
 									<span></span>
 									<div class="media">
 										<div class="d-flex">
+											<p>MAR 2025 - Present</p>
+										</div>
+										<div class="media-body">
+											<h4>Deep Learning Student Researcher</h4>
+											<p>University of Sydney<br/>Australia 🇦🇺</p>
+										</div>
+									</div>
+								</li>
+								<li>
+									<span></span>
+									<div class="media">
+										<div class="d-flex">
 											<p>SEP 2023 - SEP 2024</p>
 										</div>
 										<div class="media-body">
-											<h4>Sydney Computing Society (SYNCS)</h4>
-											<p>Sponsorship Director <br />Sydney, Australia 🇦🇺</p>
+											<h4>Sponsorship Director</h4>
+											<p>Sydney Computing Society (SYNCS)<br/>Sydney, Australia 🇦🇺</p>
 										</div>
 									</div>
 								</li>
@@ -164,8 +165,8 @@
 											<p>DEC 2022 - DEC 2023</p>
 										</div>
 										<div class="media-body">
-											<h4>Sydney Quant Traders (SQT)</h4>
-											<p>Software Developer<br />Sydney, Australia 🇦🇺</p>
+											<h4>Software Developer</h4>
+											<p>Sydney Quant Traders (SQT)<br/>Sydney, Australia 🇦🇺</p>
 										</div>
 									</div>
 								</li>
@@ -176,8 +177,8 @@
 											<p>JUN 2022 - DEC 2022</p>
 										</div>
 										<div class="media-body">
-											<h4>Google Developer Student Club (GDSC)</h4>
-											<p>Technical Team <br />Sydney, Australia 🇦🇺</p>
+											<h4>Technical Team</h4>
+											<p>Google Developer Student Club (GDSC)<br/>Sydney, Australia 🇦🇺</p>
 										</div>
 									</div>
 								</li>
@@ -204,16 +205,6 @@
         	</div>
         	<div class="container">
         		<div class="gallery_f_inner row imageGallery1">
-        			<div class="col-lg-4 col-md-4 col-sm-6 brand manipul creative">
-        				<div class="h_gallery_item">
-        					<div class="g_item_text">
-								<a href="patterntrading.html"><img class="img-fluid" src="img/options.png" alt=""></a>
-        						<h4>Pattern Trading Strategy</h4>
-								<h5>A machine learning and statistics powered options trading strategy.</h5>
-        						<a href="patterntrading.html" class="genric-btn info circle arrow">Learn More<span class="lnr lnr-arrow-right"></span></a>
-        					</div>
-        				</div>
-        			</div>
 					<div class="col-lg-4 col-md-4 col-sm-6 brand manipul design print">
         				<div class="h_gallery_item">
         					<div class="g_item_text">
@@ -233,24 +224,15 @@
         <!--================End Project Area =================-->
         
         <!--================Footer Area =================-->
-        <footer class="footer_area p_120">
-        	<div class="container">
-        		<div class="row footer_inner">
-        			<div class="col-lg-2">
-        				<aside class="f_widget social_widget">
-        					<div class="f_title">
-        						<h3>Stay in Touch</h3>
-        					</div>
-        					<ul class="list">
-        						<li><a href="https://www.linkedin.com/in/ivan-yeh-58367122b/" target="_blank"><i class="fa fa-linkedin"></i></a></li>
-								<li><a href="https://github.com/Ivan-Yeh" target="_blank"><i class="fa fa-github"></i></a></li>
-        						<li><a href="mailto:ivan.hsuu@gmail.com"><i class="fa fa-envelope"></i> ivan.hsuu@gmail.com</a></li>
-        					</ul>
-        				</aside>
-        			</div>
-        		</div>
-        	</div>
-        </footer>
+		<div id="footer"></div>
+
+		<script>
+		fetch("footer.html")
+			.then(response => response.text())
+			.then(data => {
+			document.getElementById("footer").innerHTML = data;
+			});
+		</script>
         <!--================End Footer Area =================-->
         
         

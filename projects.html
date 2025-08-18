@@ -23,29 +23,15 @@
 	
     <body>
         <!--================Header Menu Area =================-->
-        <header class="header_area">
-            <div class="main_menu">
-            	<nav class="navbar navbar-expand-lg navbar-light">
-					<div class="container box_1620">
-						<!-- Brand and toggle get grouped for better mobile display -->
-						<a class="navbar-brand logo_h" href="index.html"><img src="img/logo.png" alt="" width="150"></a>
-						<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-						</button>
-						<!-- Collect the nav links, forms, and other content for toggling -->
-						<div class="collapse navbar-collapse offset" id="navbarSupportedContent">
-							<ul class="nav navbar-nav menu_nav ml-auto">
-								<li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li> 
-								<li class="nav-item"><a class="nav-link" href="resume.html">Resume</a></li> 
-								<li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
-							</ul>
-						</div> 
-					</div>
-            	</nav>
-            </div>
-        </header>
+        <div id="header"></div>
+
+		<script>
+		fetch("header.html")
+			.then(response => response.text())
+			.then(data => {
+			document.getElementById("header").innerHTML = data;
+			});
+		</script>
         <!--================Header Menu Area =================-->
         
         <!--================Home Banner Area =================-->
@@ -67,16 +53,6 @@
         <section class="home_gallery_area p_120">
         	<div class="container">
         		<div class="gallery_f_inner row imageGallery1">
-        			<div class="col-lg-4 col-md-4 col-sm-6 brand manipul creative">
-        				<div class="h_gallery_item">
-        					<div class="g_item_text">
-								<a href="patterntrading.html"><img class="img-fluid" src="img/options.png" alt=""></a>
-        						<h4>Pattern Trading Strategy</h4>
-								<h5>A machine learning and statistics powered options trading strategy.</h5>
-        						<a href="patterntrading.html" class="genric-btn info circle arrow">Learn More<span class="lnr lnr-arrow-right"></span></a>
-        					</div>
-        				</div>
-        			</div>
 					<div class="col-lg-4 col-md-4 col-sm-6 brand manipul design print">
         				<div class="h_gallery_item">
         					<div class="g_item_text">
@@ -113,24 +89,17 @@
         <!--================End Home Gallery Area =================-->
         
         <!--================Footer Area =================-->
-        <footer class="footer_area p_120">
-        	<div class="container">
-        		<div class="row footer_inner">
-        			<div class="col-lg-2">
-        				<aside class="f_widget social_widget">
-        					<div class="f_title">
-        						<h3>Stay in Touch</h3>
-        					</div>
-        					<ul class="list">
-        						<li><a href="https://www.linkedin.com/in/ivan-yeh-58367122b/" target="_blank"><i class="fa fa-linkedin"></i></a></li>
-								<li><a href="https://github.com/Ivan-Yeh" target="_blank"><i class="fa fa-github"></i></a></li>
-        						<li><a href="mailto:ivan.hsuu@gmail.com"><i class="fa fa-envelope"></i> ivan.hsuu@gmail.com</a></li>
-        					</ul>
-        				</aside>
-        			</div>
-        		</div>
-        	</div>
-        </footer>
+        <!--================Footer Area =================-->
+		<div id="footer"></div>
+
+		<script>
+		fetch("footer.html")
+			.then(response => response.text())
+			.then(data => {
+			document.getElementById("footer").innerHTML = data;
+			});
+		</script>
+        <!--================End Footer Area =================-->
         <!--================End Footer Area =================-->
         
         
