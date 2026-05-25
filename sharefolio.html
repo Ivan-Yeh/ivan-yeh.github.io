@@ -1,12 +1,10 @@
 <!doctype html>
 <html lang="en">
     <head>
-        <!-- Required meta tags -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link rel="icon" href="img/favicon.png" type="image/png">
-        <title>Ivan's Project - Sharefolio Analyser ASX</title>
-        <!-- Bootstrap CSS -->
+        <title>Sharefolio &ndash; Ivan Yeh</title>
         <link rel="stylesheet" href="css/bootstrap.css">
         <link rel="stylesheet" href="vendors/linericon/style.css">
         <link rel="stylesheet" href="css/font-awesome.min.css">
@@ -15,125 +13,301 @@
         <link rel="stylesheet" href="vendors/nice-select/css/nice-select.css">
         <link rel="stylesheet" href="vendors/animate-css/animate.css">
         <link rel="stylesheet" href="vendors/popup/magnific-popup.css">
-        <!-- main css -->
+        <link rel="stylesheet" href="vendors/flaticon/flaticon.css">
         <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="css/responsive.css">
+        <style>
+            /* Shared with index.html */
+            .skill_tag_grid {
+                display: flex;
+                flex-direction: column;
+                gap: 18px;
+            }
+            .skill_tag_block h3 {
+                font-size: 0.78em;
+                font-weight: 700;
+                letter-spacing: 0.1em;
+                text-transform: uppercase;
+                color: #aaa;
+                margin-bottom: 8px;
+            }
+            .skill_tags {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 7px;
+            }
+            .skill_tag {
+                display: inline-block;
+                font-size: 0.82em;
+                color: #555;
+                background: #f4f4f4;
+                border: 1px solid #e4e4e4;
+                border-radius: 4px;
+                padding: 4px 10px;
+                line-height: 1.4;
+            }
+
+            /* Page-specific */
+            .sf_about_area {
+                padding-top: 100px;
+                padding-bottom: 100px;
+            }
+            .sf_about_area .welcome_text h4 {
+                margin-bottom: 20px;
+            }
+
+            .sf_gallery_area {
+                padding-top: 80px;
+                padding-bottom: 80px;
+                background: #f9f9f9;
+            }
+
+            .sf_download_area {
+                padding-top: 80px;
+                padding-bottom: 80px;
+            }
+            .download_card {
+                background: #f9f9f9;
+                border: 1px solid #e8e8e8;
+                border-radius: 8px;
+                padding: 32px 36px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                gap: 32px;
+                flex-wrap: wrap;
+            }
+            .download_card_info h4 {
+                font-size: 1.05em;
+                color: #222;
+                margin-bottom: 8px;
+            }
+            .download_card_info p {
+                font-size: 0.88em;
+                color: #888;
+                margin: 0;
+                line-height: 1.6;
+            }
+            .download_card_info code {
+                font-size: 0.9em;
+                background: #eee;
+                padding: 1px 5px;
+                border-radius: 3px;
+            }
+
+            .sf_stack_area {
+                padding-top: 80px;
+                padding-bottom: 80px;
+                background: #f9f9f9;
+            }
+
+            .sf_video_area {
+                padding-top: 80px;
+                padding-bottom: 80px;
+            }
+
+            .sf_gallery_area .gallery_f_inner {
+                justify-content: center;
+            }
+            .sf_gallery_area .h_gallery_item {
+                display: block;
+                width: 100%;
+            }
+            .sf_gallery_area .g_img_item img {
+                width: 100%;
+                height: 320px;
+                object-fit: cover;
+                display: block;
+                transition: transform 0.3s ease;
+            }
+            .sf_gallery_area .g_img_item:hover img {
+                transform: scale(1.03);
+            }
+            .sf_gallery_area .g_img_item .light {
+                height: 100%;
+                cursor: pointer;
+            }
+
+            .section_label {
+                font-size: 0.75em;
+                font-weight: 700;
+                letter-spacing: 0.12em;
+                text-transform: uppercase;
+                color: #2c5fd4;
+                margin-bottom: 12px;
+            }
+
+            @media (max-width: 767px) {
+                .download_card {
+                    flex-direction: column;
+                    align-items: flex-start;
+                    gap: 20px;
+                }
+            }
+        </style>
     </head>
     <body>
-        
-       <!--================Header Menu Area =================-->
-       <div id="header"></div>
 
-		<script>
-		fetch("header.html")
-			.then(response => response.text())
-			.then(data => {
-			document.getElementById("header").innerHTML = data;
-			});
-		</script>
-        <!--================Header Menu Area =================-->
-        
-        <!--================Home Banner Area =================-->
+        <div id="header"></div>
+        <script>
+        fetch("header.html")
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("header").innerHTML = data;
+                const page = window.location.pathname.split("/").pop() || "index.html";
+                document.querySelectorAll("#header .nav-item a").forEach(a => {
+                    if (a.getAttribute("href") === page) a.closest(".nav-item").classList.add("active");
+                });
+            });
+        </script>
+
+        <!-- Banner -->
         <section class="banner_area">
             <div class="box_1620">
-				<div class="banner_inner d-flex align-items-center">
-					<div class="container">
-						<div class="banner_content text-center">
-							<h2>Sharefolio Analyser ASX</h2>
-                            <p>An award-winning ASX investment portfolio management tool.</p>
-                            <a href="https://ivanyeh.pythonanywhere.com/" target="_blank" class="genric-btn info circle arrow">Try Sharefolio Analyser ASX<span class="fa fa-external-link"></span></a>
-						</div>
-					</div>
-				</div>
+                <div class="banner_inner d-flex align-items-center">
+                    <div class="container">
+                        <div class="banner_content text-center">
+                            <h2>Sharefolio</h2>
+                            <p>An award-winning investment portfolio management tool, previously known as Sharefolio Analyser ASX.</p>
+                            <a href="sharefolio_app/Sharefolio-macOS.zip" download class="genric-btn info circle arrow">
+                                Download for macOS<span class="fa fa-download" style="margin-left: 6px;"></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
-        <!--================End Home Banner Area =================-->
-        
-        <!--================Blog Area =================-->
-        <section class="sample-text-area">
-            <div class="container">
-                <h3 class="text-heading title_color">Track Your Investments Like a Pro</h3>
-                <p>
-                    Launched in July 2022 and previously known as the ASX Dashboard, Sharefolio Analyser ASX is a portfolio tracker for Australian Securities Exchange investors. Users can upload their trade and dividend history in CSV or manually enter their records via the platform. Sharefolio Analyser ASX then analyses their portfolio performance and provides insights with interactive charts. 
-                </p>
-                <p>
-                    Sharefolio Analyser ASX is a full-stack web application built with Python, SQL and HTML. By integrating finance and accounting knowledge, this project is a result of an interdisciplinary learning journey and a passion for building technological tools that empower human beings. 
-                </p>
-                <p>
-                    Sharefolio Analyser ASX  was awarded <i> the Best Junior Undergraduate Project</i> by <i><strong>Citadel Securities</strong></i> at the Coding Fest 2023 at the University of Sydney.</p>
-                </p>
-            </div>
 
+        <!-- About -->
+        <section class="sf_about_area">
             <div class="container">
-                <div class="gallery_f_inner row imageGallery1">
-                    <div class="col-lg-4 col-md-4 col-sm-6 brand manipul design print">
-                        <div class="h_gallery_item">
-                            <div class="g_img_item">
-                                <img class="img-fluid" src="img/sharefolio-1.png" alt="">
-                                <a class="light" href="img/sharefolio-1.png"><img src="img/sharefolio-1.png" alt=""></a>
-                            </div>
+                <div class="row welcome_inner">
+                    <div class="col-lg-6">
+                        <div class="welcome_text">
+                            <div class="section_label">Overview</div>
+                            <h4>Track Your Investments Like a Pro</h4>
+                            <p>
+                                Sharefolio is an actively maintained investment portfolio management tool, originally launched in 2022 as Sharefolio Analyser ASX. Users can upload their trade and dividend history in CSV or manually enter records via the platform. Sharefolio then analyses portfolio performance and provides insights with interactive charts.
+                            </p>
+                            <p>
+                                What began as a tool for Australian Securities Exchange (ASX) investors has since grown to support international markets. Following its web-based origins, Sharefolio is now distributed as a local desktop app for macOS, keeping it freely accessible without ongoing hosting costs.
+                            </p>
+                            <p>
+                                Sharefolio was awarded <i>Best Junior Undergraduate Project</i> by <strong>Citadel Securities</strong> at the Coding Fest 2023 at the University of Sydney.
+                            </p>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-4 col-sm-6 brand manipul design print">
-                        <div class="h_gallery_item">
-                            <div class="g_img_item">
-                                <img class="img-fluid" src="img/Coding 2023 Fest -9164.jpeg" alt="">
-                                <a class="light" href="img/Coding 2023 Fest -9164.jpeg"><img src="img/Coding 2023 Fest -9164.jpeg" alt=""></a>
+                    <div class="col-lg-5 offset-lg-1" style="display: flex; align-items: center;">
+                        <div class="skill_tag_grid" style="width: 100%;">
+                            <div class="skill_tag_block">
+                                <h3>Features</h3>
+                                <div class="skill_tags">
+                                    <span class="skill_tag">Portfolio Tracking</span>
+                                    <span class="skill_tag">CSV Import</span>
+                                    <span class="skill_tag">Interactive Charts</span>
+                                    <span class="skill_tag">Dividend History</span>
+                                    <span class="skill_tag">International Markets</span>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-4 col-sm-6 brand manipul design print">
-                        <div class="h_gallery_item">
-                            <div class="g_img_item">
-                                <img class="img-fluid" src="img/Coding Fest 2023 Poster.png" alt="">
-                                <a class="light" href="img/Coding Fest 2023 Poster.png"><img src="img/Coding Fest 2023 Poster.png" alt=""></a>
+                            <div class="skill_tag_block">
+                                <h3>Tech Stack</h3>
+                                <div class="skill_tags">
+                                    <span class="skill_tag">Python</span>
+                                    <span class="skill_tag">Flask</span>
+                                    <span class="skill_tag">SQLite</span>
+                                    <span class="skill_tag">Pandas</span>
+                                    <span class="skill_tag">NumPy</span>
+                                    <span class="skill_tag">HTML / CSS / JS</span>
+                                </div>
+                            </div>
+                            <div class="skill_tag_block">
+                                <h3>Platform</h3>
+                                <div class="skill_tags">
+                                    <span class="skill_tag">macOS Desktop App</span>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <br>
-            <br>
-            <div class="container">
-                <h3 class="text-heading title_color">Tech Stack</h3>
-                <li>Backend: Python (Flask), SQL Lite</li>
-                <li>Data Analysis: Python (Pandas, Numpy)</li>
-                <li>Front End: HTML, CSS, Javascript</li>
-            </div>
-            <br>
-            <br>
-            <div class="container">
-                <a href="https://ivanyeh.pythonanywhere.com/" target="_blank" class="genric-btn info circle arrow">Try Sharefolio Analyser ASX<span class="fa fa-external-link"></span></a>
-            </div>
-            <br>
-            <br>
-            <div class="container">
-                <h3 class="text-heading title_color">About the Coding Fest at the University of Sydney</h3>
-                <div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/1009706258?h=ee83be2a65&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Coding Fest x Shaping Australia Awards MASTER Captions 2024-09-16"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
-            </div>
-            
         </section>
-        <!--================Blog Area =================-->
-        
-        <!--================Footer Area =================-->
-        <!--================Footer Area =================-->
-		<div id="footer"></div>
 
-		<script>
-		fetch("footer.html")
-			.then(response => response.text())
-			.then(data => {
-			document.getElementById("footer").innerHTML = data;
-			});
-		</script>
-        <!--================End Footer Area =================-->
-        <!--================End Footer Area =================-->
-        
-        
-        
-        
-        <!-- Optional JavaScript -->
-        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <!-- Gallery -->
+        <section class="sf_gallery_area">
+            <div class="container">
+                <div class="main_title" style="margin-bottom: 40px;">
+                    <h2>Project Showcase</h2>
+                </div>
+                <div class="gallery_f_inner row imageGallery1 justify-content-center">
+                    <div class="col-lg-4 col-md-4 col-sm-6">
+                        <div class="h_gallery_item">
+                            <div class="g_img_item">
+                                <img src="img/sharefolio-1.png" alt="Sharefolio dashboard">
+                                <a class="light" href="img/sharefolio-1.png"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-6">
+                        <div class="h_gallery_item">
+                            <div class="g_img_item">
+                                <img src="img/Coding 2023 Fest -9164.jpeg" alt="Coding Fest 2023">
+                                <a class="light" href="img/Coding 2023 Fest -9164.jpeg"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-6">
+                        <div class="h_gallery_item">
+                            <div class="g_img_item">
+                                <img src="img/Coding Fest 2023 Poster.png" alt="Coding Fest 2023 Poster">
+                                <a class="light" href="img/Coding Fest 2023 Poster.png"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Download -->
+        <section class="sf_download_area">
+            <div class="container">
+                <div class="main_title" style="margin-bottom: 36px;">
+                    <h2>Download</h2>
+                </div>
+                <div class="download_card">
+                    <div class="download_card_info">
+                        <h4><i class="fa fa-apple" style="margin-right: 8px;"></i>Sharefolio for macOS</h4>
+                        <p>
+                            Unzip and open <code>Sharefolio.app</code>.
+                        </p>
+                    </div>
+                    <a href="sharefolio_app/Sharefolio-macOS.zip" download class="genric-btn info circle arrow" style="white-space: nowrap;">
+                        Download for macOS<span class="fa fa-download" style="margin-left: 6px;"></span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Coding Fest Video -->
+        <section class="sf_video_area" style="background: #f9f9f9;">
+            <div class="container">
+                <div class="main_title" style="margin-bottom: 36px;">
+                    <h2>About Coding Fest</h2>
+                    <p>University of Sydney</p>
+                </div>
+                <div style="padding: 56.25% 0 0 0; position: relative;">
+                    <iframe src="https://player.vimeo.com/video/1009706258?h=ee83be2a65&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Coding Fest x Shaping Australia Awards 2024"></iframe>
+                </div>
+                <script src="https://player.vimeo.com/api/player.js"></script>
+            </div>
+        </section>
+
+        <div id="footer"></div>
+        <script>
+        fetch("footer.html")
+            .then(response => response.text())
+            .then(data => { document.getElementById("footer").innerHTML = data; });
+        </script>
+
         <script src="js/jquery-3.3.1.min.js"></script>
         <script src="js/popper.js"></script>
         <script src="js/bootstrap.min.js"></script>

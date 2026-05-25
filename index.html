@@ -1,12 +1,10 @@
 <!doctype html>
 <html lang="en">
     <head>
-        <!-- Required meta tags -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link rel="icon" href="img/favicon.png" type="image/png">
-        <title>Ivan's Portfolio</title>
-        <!-- Bootstrap CSS -->
+        <title>Ivan Yeh</title>
         <link rel="stylesheet" href="css/bootstrap.css">
         <link rel="stylesheet" href="vendors/linericon/style.css">
         <link rel="stylesheet" href="css/font-awesome.min.css">
@@ -16,232 +14,432 @@
         <link rel="stylesheet" href="vendors/animate-css/animate.css">
         <link rel="stylesheet" href="vendors/popup/magnific-popup.css">
         <link rel="stylesheet" href="vendors/flaticon/flaticon.css">
-        <!-- main css -->
         <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="css/responsive.css">
+        <style>
+            /* About Me skills grid */
+            .skill_tag_grid {
+                display: flex;
+                flex-direction: column;
+                gap: 18px;
+            }
+            .skill_tag_block h3 {
+                font-size: 0.78em;
+                font-weight: 700;
+                letter-spacing: 0.1em;
+                text-transform: uppercase;
+                color: #aaa;
+                margin-bottom: 8px;
+            }
+            .skill_tags {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 7px;
+            }
+            .skill_tag {
+                display: inline-block;
+                font-size: 0.82em;
+                color: #555;
+                background: #f4f4f4;
+                border: 1px solid #e4e4e4;
+                border-radius: 4px;
+                padding: 4px 10px;
+                line-height: 1.4;
+            }
+
+            /* Featured Work */
+            .featured_work_area {
+                padding-top: 100px;
+                padding-bottom: 100px;
+                background: #f9f9f9;
+            }
+            .work_card {
+                background: #fff;
+                border: 1px solid #e8e8e8;
+                border-radius: 8px;
+                overflow: hidden;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                transition: box-shadow 0.2s ease, transform 0.2s ease;
+            }
+            .work_card:hover {
+                box-shadow: 0 6px 24px rgba(0,0,0,0.09);
+                transform: translateY(-3px);
+            }
+            .work_card_img img {
+                width: 100%;
+                height: 200px;
+                object-fit: cover;
+                display: block;
+            }
+            .work_card_body {
+                padding: 24px 26px 28px;
+                display: flex;
+                flex-direction: column;
+                flex: 1;
+            }
+            .work_card_tag {
+                font-size: 0.72em;
+                font-weight: 700;
+                letter-spacing: 0.1em;
+                text-transform: uppercase;
+                color: #2c5fd4;
+                margin-bottom: 10px;
+            }
+            .work_card_body h4 {
+                font-size: 1.1em;
+                color: #222;
+                margin-bottom: 8px;
+                line-height: 1.4;
+            }
+            .work_card_body p {
+                font-size: 0.9em;
+                color: #777;
+                line-height: 1.6;
+                flex: 1;
+                margin-bottom: 20px;
+            }
+
+            /* Publications in featured work */
+            .pub_mini_list {
+                list-style: none;
+                margin: 0 0 20px;
+                padding: 0;
+                display: flex;
+                flex-direction: column;
+                gap: 12px;
+            }
+            .pub_mini_item {
+                display: flex;
+                align-items: flex-start;
+                gap: 10px;
+            }
+            .pub_mini_badge {
+                flex-shrink: 0;
+                font-size: 0.68em;
+                font-weight: 700;
+                letter-spacing: 0.06em;
+                text-transform: uppercase;
+                padding: 3px 8px;
+                border-radius: 3px;
+                margin-top: 2px;
+            }
+            .pub_mini_badge.first {
+                background: #e6f4ea;
+                color: #1a7f3c;
+            }
+            .pub_mini_badge.second {
+                background: #e8f0fb;
+                color: #2c5fd4;
+            }
+            .pub_mini_title {
+                font-size: 0.86em;
+                color: #444;
+                line-height: 1.45;
+            }
+
+            /* Experience section */
+            .experience_area {
+                padding-top: 100px;
+                padding-bottom: 100px;
+            }
+            .exp_list {
+                margin-top: 10px;
+            }
+            .exp_item {
+                display: flex;
+                gap: 28px;
+                padding: 28px 0;
+                border-bottom: 1px solid #f0f0f0;
+                align-items: flex-start;
+            }
+            .exp_item:last-child {
+                border-bottom: none;
+            }
+            .exp_date {
+                flex-shrink: 0;
+                width: 160px;
+                font-size: 0.8em;
+                color: #aaa;
+                font-weight: 500;
+                letter-spacing: 0.03em;
+                padding-top: 4px;
+                text-align: right;
+            }
+            .exp_dot_col {
+                flex-shrink: 0;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding-top: 6px;
+            }
+            .exp_dot {
+                width: 10px;
+                height: 10px;
+                border-radius: 50%;
+                background: #2c5fd4;
+                flex-shrink: 0;
+            }
+            .exp_line {
+                width: 1px;
+                background: #e4e4e4;
+                flex: 1;
+                margin-top: 6px;
+                min-height: 40px;
+            }
+            .exp_item:last-child .exp_line {
+                display: none;
+            }
+            .exp_content h4 {
+                font-size: 1em;
+                color: #222;
+                margin-bottom: 4px;
+                font-weight: 700;
+            }
+            .exp_content .exp_org {
+                font-size: 0.88em;
+                color: #666;
+                margin-bottom: 0;
+            }
+
+            /* Tighter hero banner */
+            .home_banner_area { margin-bottom: 80px; }
+            .home_banner_area .container { max-width: 92%; }
+            .home_banner_area .box_1620 { bottom: -80px; min-height: 480px; padding: 30px 60px; }
+            .home_banner_area .banner_inner { min-height: 480px; }
+
+            @media (min-width: 992px) and (max-width: 1199px) {
+                .home_banner_area .banner_content { gap: 44px !important; }
+                .home_banner_area .banner_content img { width: 220px !important; height: 220px !important; }
+            }
+
+            @media (min-width: 768px) and (max-width: 991px) {
+                .home_banner_area .box_1620 { padding: 30px 36px; }
+                .home_banner_area .banner_content { gap: 36px !important; }
+                .home_banner_area .banner_content img { width: 180px !important; height: 180px !important; }
+            }
+
+            @media (max-width: 767px) {
+                .exp_date { display: none; }
+                .exp_dot_col { display: none; }
+                .exp_item { gap: 0; padding: 20px 0; }
+                .work_card_img img { height: 160px; }
+                .home_banner_area .box_1620 { padding: 30px 24px; min-height: auto; }
+                .home_banner_area .banner_inner { min-height: auto; }
+                .home_banner_area .banner_content { flex-direction: column; text-align: center; gap: 24px; }
+                .home_banner_area .banner_content img { width: 150px !important; height: 150px !important; }
+                .home_banner_area .personal_text { text-align: center; word-break: break-word; }
+            }
+        </style>
     </head>
     <body>
-        
-        <!--================Header Menu Area =================-->
-		<div id="header"></div>
 
-		<script>
-		fetch("header.html")
-			.then(response => response.text())
-			.then(data => {
-			document.getElementById("header").innerHTML = data;
-			});
-		</script>
-        <!--================Header Menu Area =================-->
-        
-        <!--================Home Banner Area =================-->
+        <div id="header"></div>
+        <script>
+        fetch("header.html")
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("header").innerHTML = data;
+                const page = window.location.pathname.split("/").pop() || "index.html";
+                document.querySelectorAll("#header .nav-item a").forEach(a => {
+                    if (a.getAttribute("href") === page) a.closest(".nav-item").classList.add("active");
+                });
+            });
+        </script>
+
+        <!--================Hero Banner =================-->
         <section class="home_banner_area">
-           	<div class="container box_1620">
-           		<div class="banner_inner d-flex align-items-center">
-					<div class="banner_content">
-						<div class="media">
-							<div class="d-flex">
-								<img src="img/personal.jpg" alt="" width="600">
-							</div>
-							<div class="media-body">
-								<div class="personal_text">
-									<h6>Hello, I'm</h6>
-									<h3>Ivan Yeh</h3>
-									<h4>Computer Science • Machine Learning • Deep Learning • Data Science • Quantitative Finance</h4>
-									<h5>University of Sydney 🇦🇺</h5>
-									<ul class="list personal_social">
-										<li><a href="https://www.linkedin.com/in/ivan-yeh-58367122b/" target="_blank"><i class="fa fa-linkedin"></i></a></li>
-										<li><a href="https://github.com/Ivan-Yeh" target="_blank"><i class="fa fa-github"></i></a></li>
-										<li><a href="mailto:ivan.hsuu@gmail.com"><i class="fa fa-envelope"></i></a></li>
-									</ul>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
+            <div class="container box_1620">
+                <div class="banner_inner d-flex align-items-center">
+                    <div class="banner_content" style="width: 100%; display: flex; align-items: center; justify-content: center; gap: 70px;">
+                        <img src="img/personal.jpg" alt="Ivan Yeh" style="width: 280px; height: 280px; object-fit: cover; border-radius: 50%; flex-shrink: 0;">
+                        <div class="personal_text">
+                            <h6>Hello, I'm</h6>
+                            <h3>Ivan Yeh</h3>
+                            <h4>AI Research &bull; Machine Learning &bull; Data Science &bull; Quantitative Finance</h4>
+                            <h5>University of Sydney &nbsp;&#x1F1E6;&#x1F1FA;</h5>
+                            <ul class="list personal_social">
+                                <li><a href="https://www.linkedin.com/in/ivan-yeh-58367122b/" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+                                <li><a href="https://github.com/Ivan-Yeh" target="_blank"><i class="fa fa-github"></i></a></li>
+                                <li><a href="mailto:ivanyeh2910@gmail.com"><i class="fa fa-envelope"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
-        <!--================End Home Banner Area =================-->
-        
+        <!--================End Hero Banner =================-->
+
         <!--================About Me =================-->
         <section class="welcome_area p_120">
-        	<div class="container">
-        		<div class="row welcome_inner">
-        			<div class="col-lg-6">
-        				<div class="welcome_text">
-        					<h4>About Me</h4>
-        					<p>
-								I am a 4th-year Bachelor of Advanced Computing (Honours) student at the University of Sydney with a double major in Computational Data Science and Financial Mathematics + Statistics. 
-								I am currently working as a Deep Learning Student Researcher at the University of Sydney, focusing on large language model uncertainty estimation and calibration.
-							</p>
-        				</div>
-        			</div>
-        			<div class="col-lg-6">
-        				<div class="tools_expert">
-        					<div class="skill_main">
-								<div class="skill_item">
-									<h3>Programming Languages</h3>
-									<h4>Python, Java, C++, SQL, R, HTML, CSS, Bash, Git</h4>
-								</div>
-							</div>
-        					<div class="skill_main">
-								<div class="skill_item">
-									<h3>Computer Science</h3>
-									<h4>Machine Learning, Deep Learning, Data Structures and Algorithms, Operating Systems, Software Engineering, Data Analysis, Data Engineering</h4>
-								</div>
-							</div>
-        					<div class="skill_main">
-								<div class="skill_item">
-									<h3>Quantitative Finance & Mathematics</h3>
-									<h4>Option Pricing, Option Strategies, Trading, Portfolio Theories, Optimisation, Statistics</h4>
-								</div>
-							</div>
-        				</div>
-        			</div>
-        		</div>
-        	</div>
+            <div class="container">
+                <div class="row welcome_inner">
+                    <div class="col-lg-5">
+                        <div class="welcome_text">
+                            <h4>About Me</h4>
+                            <p>
+                                I am a final year Bachelor of Advanced Computing (Honours) student at the University of Sydney, majoring in Computational Data Science + Financial Mathematics and Statistics.
+                            </p>
+                            <p>
+                                I currently work as an AI Research Assistant at the Sydney Artificial Intelligence Centre, focused on large language model calibration, uncertainty estimation, and trustworthiness. I have co-authored 3 research publications, including one as first author.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 offset-lg-1">
+                        <div class="skill_tag_grid">
+                            <div class="skill_tag_block">
+                                <h3>Languages</h3>
+                                <div class="skill_tags">
+                                    <span class="skill_tag">Python</span>
+                                    <span class="skill_tag">Java</span>
+                                    <span class="skill_tag">C++</span>
+                                    <span class="skill_tag">SQL</span>
+                                    <span class="skill_tag">R</span>
+                                    <span class="skill_tag">Bash</span>
+                                </div>
+                            </div>
+                            <div class="skill_tag_block">
+                                <h3>AI / ML / LLM</h3>
+                                <div class="skill_tags">
+                                    <span class="skill_tag">PyTorch</span>
+                                    <span class="skill_tag">Transformers</span>
+                                    <span class="skill_tag">vLLM</span>
+                                    <span class="skill_tag">RAG</span>
+                                    <span class="skill_tag">Scikit-learn</span>
+                                    <span class="skill_tag">Prompt Engineering</span>
+                                </div>
+                            </div>
+                            <div class="skill_tag_block">
+                                <h3>Data &amp; Quant</h3>
+                                <div class="skill_tags">
+                                    <span class="skill_tag">Pandas</span>
+                                    <span class="skill_tag">NumPy</span>
+                                    <span class="skill_tag">Statistics</span>
+                                    <span class="skill_tag">Option Pricing</span>
+                                    <span class="skill_tag">Portfolio Theory</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
         <!--================End About Me =================-->
-        
-        <!--================Resume Snapshot =================-->
-        <section class="mytabs_area p_100">
-        	<div class="container">
-        		<div class="tabs_inner">
-					<ul class="nav nav-tabs" id="myTab" role="tablist">
-						<li class="nav-item">
-							<a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="false">My Experiences</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link " id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="true">My Education</a>
-						</li>
-					</ul>
-					<div class="tab-content" id="myTabContent">
-						<div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-							<ul class="list">
-								<li>
-									<span></span>
-									<div class="media">
-										<div class="d-flex">
-											<p>FEB 2022 - PRESENT</p>
-										</div>
-										<div class="media-body">
-											<h4>University of Sydney</h4>
-											<p>Bachelor of Advanced Computing (Honours) <br />Sydney, Australia 🇦🇺</p>
-										</div>
-									</div>
-								</li>
-							</ul>
-						</div>
-						<div class="tab-pane show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-							<ul class="list">
-								<li>
-									<span></span>
-									<div class="media">
-										<div class="d-flex">
-											<p>MAR 2025 - Present</p>
-										</div>
-										<div class="media-body">
-											<h4>Deep Learning Student Researcher</h4>
-											<p>University of Sydney<br/>Australia 🇦🇺</p>
-										</div>
-									</div>
-								</li>
-								<li>
-									<span></span>
-									<div class="media">
-										<div class="d-flex">
-											<p>SEP 2023 - SEP 2024</p>
-										</div>
-										<div class="media-body">
-											<h4>Sponsorship Director</h4>
-											<p>Sydney Computing Society (SYNCS)<br/>Sydney, Australia 🇦🇺</p>
-										</div>
-									</div>
-								</li>
-								<li>
-									<span></span>
-									<div class="media">
-										<div class="d-flex">
-											<p>DEC 2022 - DEC 2023</p>
-										</div>
-										<div class="media-body">
-											<h4>Software Developer</h4>
-											<p>Sydney Quant Traders (SQT)<br/>Sydney, Australia 🇦🇺</p>
-										</div>
-									</div>
-								</li>
-								<li>
-									<span></span>
-									<div class="media">
-										<div class="d-flex">
-											<p>JUN 2022 - DEC 2022</p>
-										</div>
-										<div class="media-body">
-											<h4>Technical Team</h4>
-											<p>Google Developer Student Club (GDSC)<br/>Sydney, Australia 🇦🇺</p>
-										</div>
-									</div>
-								</li>
-							</ul>
-						</div>
-					</div>
-        		</div>
-				<br/><br/><br/>
-				<div class="main_title">
-					<a href="resume.html" class="genric-btn default circle">View My Resume</a>
-				</div>
-        	</div>
-			
-        </section>
-        <!--================End Resume Snapshot =================-->
-        
-        <!--================Project Area =================-->
-        <section class="home_gallery_area p_120">
-        	<div class="container">
-        		<div class="main_title">
-        			<h2>Featured Projects</h2>
-        			<p>where computer science, mathematics and finance intersect</p>
-        		</div>
-        	</div>
-        	<div class="container">
-        		<div class="gallery_f_inner row imageGallery1">
-					<div class="col-lg-4 col-md-4 col-sm-6 brand manipul design print">
-        				<div class="h_gallery_item">
-        					<div class="g_item_text">
-								<a href="sharefolio.html"><img class="img-fluid" src="img/sharefolio-2.jpeg" alt=""></a>
-        						<h4>Sharefolio Analyser ASX</h4>
-								<h5>An award-winning ASX investment portfolio management tool.</h5>
-        						<a href="sharefolio.html" class="genric-btn info circle arrow">Learn More<span class="lnr lnr-arrow-right"></span></a>
-        					</div>
-        				</div>
-        			</div>
-        		</div>
-        		<div class="more_btn">
-        			<a class="main_btn" href="projects.html">View All Projects</a>
-        		</div>
-        	</div>
-        </section>
-        <!--================End Project Area =================-->
-        
-        <!--================Footer Area =================-->
-		<div id="footer"></div>
 
-		<script>
-		fetch("footer.html")
-			.then(response => response.text())
-			.then(data => {
-			document.getElementById("footer").innerHTML = data;
-			});
-		</script>
-        <!--================End Footer Area =================-->
-        
-        
-        
-        
-        
-        
-        <!-- Optional JavaScript -->
-        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <!--================Featured Work =================-->
+        <section class="featured_work_area">
+            <div class="container">
+                <div class="main_title" style="margin-bottom: 48px;">
+                    <h2>Featured Work</h2>
+                    <p>Research and software</p>
+                </div>
+                <div class="row" style="gap: 0;">
+
+                    <!-- Sharefolio -->
+                    <div class="col-lg-6 col-md-6" style="padding: 0 12px 24px;">
+                        <div class="work_card">
+                            <div class="work_card_img">
+                                <a href="sharefolio.html"><img src="img/sharefolio-2.jpeg" alt="Sharefolio Analyser ASX"></a>
+                            </div>
+                            <div class="work_card_body">
+                                <div class="work_card_tag">Software &nbsp;&middot;&nbsp; Best Junior Undergraduate Project &mdash; Citadel Securities</div>
+                                <h4>Sharefolio</h4>
+                                <p>An investment portfolio management tool supporting international markets, available as a local desktop app for macOS.</p>
+                                <a href="sharefolio.html" class="genric-btn info circle arrow" style="align-self: flex-start; margin-top: auto;">View Project<span class="lnr lnr-arrow-right"></span></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Publications -->
+                    <div class="col-lg-6 col-md-6" style="padding: 0 12px 24px;">
+                        <div class="work_card">
+                            <div class="work_card_body" style="padding-top: 32px;">
+                                <div class="work_card_tag">Research &nbsp;&middot;&nbsp; Sydney Artificial Intelligence Centre</div>
+                                <h4>Research Publications</h4>
+                                <ul class="pub_mini_list">
+                                    <li class="pub_mini_item">
+                                        <span class="pub_mini_badge first">1st Author</span>
+                                        <span class="pub_mini_title">"Retrieval-Augmented Linguistic Calibration" &mdash; arXiv 2026</span>
+                                    </li>
+                                    <li class="pub_mini_item">
+                                        <span class="pub_mini_badge second">2nd Author</span>
+                                        <span class="pub_mini_title">"Revisiting Uncertainty Estimation and Calibration of Large Language Models" &mdash; arXiv 2025</span>
+                                    </li>
+                                    <li class="pub_mini_item">
+                                        <span class="pub_mini_badge second">2nd Author</span>
+                                        <span class="pub_mini_title">"Can Large Language Models Express Uncertainty Like Humans?" &mdash; arXiv 2025</span>
+                                    </li>
+                                </ul>
+                                <a href="publications.html" class="genric-btn info circle arrow" style="align-self: flex-start; margin-top: auto;">View All Publications<span class="lnr lnr-arrow-right"></span></a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <!--================End Featured Work =================-->
+
+        <!--================Experience =================-->
+        <section class="experience_area">
+            <div class="container">
+                <div class="main_title" style="margin-bottom: 16px;">
+                    <h2>Experience</h2>
+                </div>
+                <div class="exp_list">
+
+                    <div class="exp_item">
+                        <div class="exp_date">Mar 2025 &ndash; Present</div>
+                        <div class="exp_dot_col">
+                            <div class="exp_dot"></div>
+                            <div class="exp_line"></div>
+                        </div>
+                        <div class="exp_content">
+                            <h4>AI Research Assistant (Student Researcher)</h4>
+                            <p class="exp_org">Sydney Artificial Intelligence Centre, University of Sydney</p>
+                        </div>
+                    </div>
+
+                    <div class="exp_item">
+                        <div class="exp_date">Sep 2023 &ndash; Sep 2024</div>
+                        <div class="exp_dot_col">
+                            <div class="exp_dot"></div>
+                            <div class="exp_line"></div>
+                        </div>
+                        <div class="exp_content">
+                            <h4>Sponsorship Director</h4>
+                            <p class="exp_org">Sydney Computing Society (SYNCS)</p>
+                        </div>
+                    </div>
+
+                    <div class="exp_item">
+                        <div class="exp_date">Dec 2022 &ndash; Dec 2023</div>
+                        <div class="exp_dot_col">
+                            <div class="exp_dot"></div>
+                            <div class="exp_line"></div>
+                        </div>
+                        <div class="exp_content">
+                            <h4>Software Developer</h4>
+                            <p class="exp_org">Sydney Quant Traders (SQT)</p>
+                        </div>
+                    </div>
+
+                </div>
+                <div style="margin-top: 40px;">
+                    <a href="resume.html" class="genric-btn default circle">View Full Resume</a>
+                </div>
+            </div>
+        </section>
+        <!--================End Experience =================-->
+
+        <div id="footer"></div>
+        <script>
+        fetch("footer.html")
+            .then(response => response.text())
+            .then(data => { document.getElementById("footer").innerHTML = data; });
+        </script>
+
         <script src="js/jquery-3.3.1.min.js"></script>
         <script src="js/popper.js"></script>
         <script src="js/bootstrap.min.js"></script>

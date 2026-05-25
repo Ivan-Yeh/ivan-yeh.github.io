@@ -96,6 +96,9 @@
 	.header_area .navbar {
 		background: #000;
 	}
+	.header_area .logo_h img {
+		filter: brightness(0) invert(1);
+	}
     .navbar-toggler[aria-expanded="false"] span:nth-child(2) {
 		opacity: 1;
 	}
@@ -141,7 +144,12 @@
         display: block;
 		border-bottom: 1px solid #ededed33;
 		border-radius: 0px;
+		color: #fff;
     }
+	.header_area .navbar .nav .nav-item:hover .nav-link,
+	.header_area .navbar .nav .nav-item.active .nav-link {
+		color: #6b8ff0;
+	}
 	.header_area.navbar_fixed .main_menu .navbar .nav .nav-item .nav-link {
 		line-height: 40px;
 	}
@@ -439,4 +447,9 @@
 	.isotope_fillter .gallery_filter li {
 		margin-right: 17px;
 	}
+}
+@media (max-width:991px){
+  body {
+    padding-top: 70px;
+  }
 }

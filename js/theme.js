@@ -2,23 +2,20 @@
     "use strict"
 	
 	
-	var nav_offset_top = $('header').height() + 50; 
     /*-------------------------------------------------------------------------------
-	  Navbar 
+	  Navbar
 	-------------------------------------------------------------------------------*/
 
-	//* Navbar Fixed  
+	//* Navbar Fixed
     function navbarFixed(){
-        if ( $('.header_area').length ){ 
-            $(window).scroll(function() {
-                var scroll = $(window).scrollTop();   
-                if (scroll >= nav_offset_top ) {
-                    $(".header_area").addClass("navbar_fixed");
-                } else {
-                    $(".header_area").removeClass("navbar_fixed");
-                }
-            });
-        };
+        $(window).scroll(function() {
+            var scroll = $(window).scrollTop();
+            if (scroll >= 50) {
+                $(".header_area").addClass("navbar_fixed");
+            } else {
+                $(".header_area").removeClass("navbar_fixed");
+            }
+        });
     };
     navbarFixed();
 	

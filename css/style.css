@@ -64,7 +64,8 @@ body {
   font-size: 16px;
   font-family: "Roboto", sans-serif;
   font-weight: normal;
-  color: #777777; }
+  color: #777777;
+  padding-top: 120px; }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: "Heebo", sans-serif;
@@ -131,12 +132,16 @@ button:focus {
 /*---------------------------------------------------- */
 /*----------------------------------------------------*/
 .header_area {
-  position: absolute;
-  width: 100%;
+  position: fixed;
   top: 0;
+  width: 100%;
   left: 0;
   z-index: 99;
-  transition: background 0.4s, all 0.3s linear; }
+  background: #fff;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+  transition: background 0.4s, box-shadow 0.4s; }
+  .header_area .logo_h img {
+    filter: brightness(0); }
   .header_area .navbar {
     background: transparent;
     padding: 0px;
@@ -147,13 +152,13 @@ button:focus {
       .header_area .navbar .nav .nav-item .nav-link {
         font: 500 12px/120px "Roboto", sans-serif;
         text-transform: uppercase;
-        color: #fff;
+        color: #333;
         padding: 0px;
         display: inline-block; }
         .header_area .navbar .nav .nav-item .nav-link:after {
           display: none; }
       .header_area .navbar .nav .nav-item:hover .nav-link, .header_area .navbar .nav .nav-item.active .nav-link {
-        color: #fff; }
+        color: #2c5fd4; }
       .header_area .navbar .nav .nav-item.submenu {
         position: relative; }
         .header_area .navbar .nav .nav-item.submenu ul {
@@ -227,19 +232,16 @@ button:focus {
       margin-left: 80px; }
       .header_area .navbar .search i {
         font-weight: 600; }
-  .header_area.navbar_fixed .main_menu {
-    position: fixed;
-    width: 100%;
-    top: -70px;
-    left: 0;
-    right: 0;
+  .header_area.navbar_fixed {
     background: #000;
-    transform: translateY(70px);
-    transition: transform 500ms ease, background 500ms ease;
-    -webkit-transition: transform 500ms ease, background 500ms ease;
-    box-shadow: 0px 3px 16px 0px rgba(0, 0, 0, 0.1); }
+    box-shadow: 0px 3px 16px 0px rgba(0, 0, 0, 0.3); }
+    .header_area.navbar_fixed .logo_h img {
+      filter: brightness(0) invert(1); }
     .header_area.navbar_fixed .main_menu .navbar .nav .nav-item .nav-link {
-      line-height: 70px; }
+      color: #fff; }
+    .header_area.navbar_fixed .main_menu .navbar .nav .nav-item:hover .nav-link,
+    .header_area.navbar_fixed .main_menu .navbar .nav .nav-item.active .nav-link {
+      color: #6b8ff0; }
 
 .top_menu {
   background: #f9f9ff; }
@@ -3001,5 +3003,10 @@ h6 {
 /* End Footer Area css
 ============================================================================================ */
 /*---------------------------------------------------- */
+
+/* Compact sub-page banners */
+.banner_area { min-height: 220px; margin-bottom: 60px; background: #f4f4f4; background-image: none; }
+.banner_area .box_1620 { min-height: 220px; bottom: -60px; }
+.banner_area .banner_inner { min-height: 220px; }
 
 /*# sourceMappingURL=style.css.map */

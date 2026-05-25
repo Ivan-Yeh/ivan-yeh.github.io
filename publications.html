@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="icon" href="img/favicon.png" type="image/png">
+        <title>Publications &ndash; Ivan Yeh</title>
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <link rel="stylesheet" href="vendors/linericon/style.css">
+        <link rel="stylesheet" href="css/font-awesome.min.css">
+        <link rel="stylesheet" href="vendors/animate-css/animate.css">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/responsive.css">
+        <style>
+            .pub_card {
+                background: #fff;
+                border: 1px solid #e8e8e8;
+                border-radius: 6px;
+                padding: 28px 32px;
+                margin-bottom: 20px;
+                transition: box-shadow 0.2s ease;
+            }
+            .pub_card:hover {
+                box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            }
+            .pub_badge {
+                display: inline-block;
+                font-size: 0.75em;
+                font-weight: 600;
+                letter-spacing: 0.06em;
+                text-transform: uppercase;
+                padding: 3px 10px;
+                border-radius: 3px;
+                margin-bottom: 12px;
+                background: #e8f0fb;
+                color: #2c5fd4;
+            }
+            .pub_badge.first-author {
+                background: #e6f4ea;
+                color: #1a7f3c;
+            }
+            .pub_card h5 {
+                font-size: 1.05em;
+                color: #222;
+                margin-bottom: 8px;
+                line-height: 1.45;
+            }
+            .pub_card .pub_authors {
+                font-size: 0.88em;
+                color: #666;
+                margin-bottom: 10px;
+            }
+            .pub_card .pub_meta {
+                font-size: 0.85em;
+                color: #888;
+            }
+            .pub_card .pub_link {
+                font-size: 0.85em;
+                color: #2c5fd4;
+                font-weight: 500;
+            }
+            .pub_card .pub_link:hover {
+                text-decoration: underline;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div id="header"></div>
+        <script>
+        fetch("header.html")
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("header").innerHTML = data;
+                const page = window.location.pathname.split("/").pop() || "index.html";
+                document.querySelectorAll("#header .nav-item a").forEach(a => {
+                    if (a.getAttribute("href") === page) a.closest(".nav-item").classList.add("active");
+                });
+            });
+        </script>
+
+        <section class="banner_area">
+            <div class="box_1620">
+                <div class="banner_inner d-flex align-items-center">
+                    <div class="container">
+                        <div class="banner_content text-center">
+                            <h2>Publications</h2>
+                            <p>Large language model calibration, trustworthiness, and uncertainty estimation</p>
+                            <a href="https://scholar.google.com/citations?user=2LOacaYAAAAJ&hl=en&oi=sra" target="_blank" class="genric-btn info circle arrow">
+                                Google Scholar <span class="fa fa-external-link" style="margin-left: 6px;"></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section style="padding-top: 80px; padding-bottom: 100px;">
+            <div class="container">
+
+                <div class="pub_card">
+                    <span class="pub_badge first-author">First Author</span>
+                    <h5>"Retrieval-Augmented Linguistic Calibration"</h5>
+                    <div class="pub_authors">
+                        <strong>Yi-Fan Yeh</strong>, Linwei Tao, Minjing Dong, Tao Huang, Jialin Yu, Philip Torr, Chang Xu
+                    </div>
+                    <div class="pub_meta">
+                        arXiv preprint &middot; 2026 &nbsp;&middot;&nbsp;
+                        <a class="pub_link" href="https://arxiv.org/abs/2605.19344" target="_blank">
+                            arxiv.org/abs/2605.19344 <span class="fa fa-external-link" style="font-size:0.85em;"></span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="pub_card">
+                    <span class="pub_badge">Second Author</span>
+                    <h5>"Revisiting Uncertainty Estimation and Calibration of Large Language Models"</h5>
+                    <div class="pub_authors">
+                        Linwei Tao, <strong>Yi-Fan Yeh</strong>, Minjing Dong, Tao Huang, Philip Torr, Chang Xu
+                    </div>
+                    <div class="pub_meta">
+                        arXiv preprint &middot; 2025 &nbsp;&middot;&nbsp;
+                        <a class="pub_link" href="https://arxiv.org/abs/2505.23854" target="_blank">
+                            arxiv.org/abs/2505.23854 <span class="fa fa-external-link" style="font-size:0.85em;"></span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="pub_card">
+                    <span class="pub_badge">Second Author</span>
+                    <h5>"Can Large Language Models Express Uncertainty Like Humans?"</h5>
+                    <div class="pub_authors">
+                        Linwei Tao, <strong>Yi-Fan Yeh</strong>, Bo Kai, Minjing Dong, Tao Huang, Tom A Lamb, Jialin Yu, Philip HS Torr, Chang Xu
+                    </div>
+                    <div class="pub_meta">
+                        arXiv preprint &middot; 2025 &nbsp;&middot;&nbsp;
+                        <a class="pub_link" href="https://arxiv.org/abs/2509.24202" target="_blank">
+                            arxiv.org/abs/2509.24202 <span class="fa fa-external-link" style="font-size:0.85em;"></span>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <div id="footer"></div>
+        <script>
+        fetch("footer.html")
+            .then(response => response.text())
+            .then(data => { document.getElementById("footer").innerHTML = data; });
+        </script>
+
+        <script src="js/jquery-3.3.1.min.js"></script>
+        <script src="js/popper.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/stellar.js"></script>
+        <script src="js/theme.js"></script>
+    </body>
+</html>

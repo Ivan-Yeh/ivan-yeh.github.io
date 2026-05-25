@@ -59,7 +59,11 @@
 		fetch("header.html")
 			.then(response => response.text())
 			.then(data => {
-			document.getElementById("header").innerHTML = data;
+				document.getElementById("header").innerHTML = data;
+				const page = window.location.pathname.split("/").pop() || "index.html";
+				document.querySelectorAll("#header .nav-item a").forEach(a => {
+					if (a.getAttribute("href") === page) a.closest(".nav-item").classList.add("active");
+				});
 			});
 		</script>
         <!--================Header Menu Area =================-->

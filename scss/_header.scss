@@ -1,11 +1,16 @@
 //header_area css
 .header_area{
-    position: absolute;
-    width: 100%;
+    position: fixed;
     top: 0;
+    width: 100%;
     left:0;
     z-index: 99;
-    transition: background 0.4s, all 0.3s linear;
+    background: #fff;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+    transition: background 0.4s, box-shadow 0.4s;
+    .logo_h img{
+        filter: brightness(0);
+    }
     .navbar{
         background: transparent;
         padding: 0px;
@@ -126,24 +131,18 @@
 //		margin-top: 120px;
 //	}
 	&.navbar_fixed{
-		.main_menu{
-			position: fixed;
-			width: 100%;
-			top: -70px;
-			left: 0;
-			right: 0;
-			background: #000;  
-			transform: translateY(70px);
-			transition: transform 500ms ease, background 500ms ease;
-			-webkit-transition: transform 500ms ease, background 500ms ease;
-			box-shadow: 0px 3px 16px 0px rgba(0, 0, 0, 0.1);
-			.navbar{
-				.nav{
-					.nav-item{
-						.nav-link{
-							line-height: 70px;
-						}
-					}
+		background: #000;
+		box-shadow: 0px 3px 16px 0px rgba(0, 0, 0, 0.3);
+		.logo_h img{
+			filter: brightness(0) invert(1);
+		}
+		.main_menu .navbar .nav .nav-item{
+			.nav-link{
+				color: #fff;
+			}
+			&:hover, &.active{
+				.nav-link{
+					color: #6b8ff0;
 				}
 			}
 		}
