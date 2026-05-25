@@ -9,18 +9,18 @@
 body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     color: #1a1a1a;
-    background: #f0f0f0;
-    font-size: 14px;
+    background: #ffffff;
+    font-size: 15px;
     line-height: 1.65;
 }
 
 #resume_wrap {
-    max-width: 860px;
+    max-width: 1000px;
     margin: 48px auto;
     padding: 52px 60px;
     background: #fff;
-    box-shadow: 0 4px 32px rgba(0, 0, 0, 0.08);
-    border-radius: 4px;
+    box-shadow: 0 4px 28px rgba(0, 0, 0, 0.09), 0 1px 6px rgba(0, 0, 0, 0.05);
+    border-radius: 14px;
 }
 
 /* ── Header ─────────────────────────────────── */
@@ -30,11 +30,13 @@ body {
     color: #111;
     letter-spacing: -0.02em;
     margin-bottom: 10px;
+    text-align: center;
 }
 
 .resume_contact {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     gap: 4px 20px;
     font-size: 0.85em;
     color: #555;
@@ -59,11 +61,11 @@ body {
 }
 
 .resume_section_title {
-    font-size: 0.68em;
+    font-size: 0.88em;
     font-weight: 700;
     letter-spacing: 0.13em;
     text-transform: uppercase;
-    color: #2c5fd4;
+    color: #111;
     padding-bottom: 6px;
     margin-bottom: 14px;
     border-bottom: 1px solid #e4e4e4;
@@ -82,7 +84,7 @@ body {
 }
 
 .resume_entry_title {
-    font-size: 0.97em;
+    font-size: 1.02em;
     font-weight: 600;
     color: #111;
 }
@@ -175,6 +177,12 @@ body {
 }
 
 .skill_row strong {
+    color: #111;
+    font-weight: 600;
+}
+
+/* ── Keyword highlights ─────────────────────── */
+.kw {
     color: #111;
     font-weight: 600;
 }
