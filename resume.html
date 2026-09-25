@@ -117,6 +117,20 @@
         <script src="js/theme.js"></script>
 		<script>
 			includeHTML();
+
+			// Keep the publication info popup next to its icon while clamping it inside the viewport
+			function placeInfoPop(e) {
+				const info = e.target.closest && e.target.closest(".pub_info");
+				if (!info) return;
+				const pop = info.querySelector(".pub_info_pop");
+				const r = info.getBoundingClientRect();
+				const w = pop.offsetWidth, h = pop.offsetHeight, gap = 8, margin = 16;
+				const left = Math.min(Math.max(r.left + r.width / 2 - w / 2, margin), window.innerWidth - w - margin);
+				const top = r.top - h - gap >= margin ? r.top - h - gap : r.bottom + gap;
+				pop.style.left = left + "px";
+				pop.style.top = top + "px";
+			}
+			["mouseover", "focusin"].forEach(t => document.addEventListener(t, e => requestAnimationFrame(() => placeInfoPop(e))));
 		</script>
     </body>
 </html>

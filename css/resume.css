@@ -164,6 +164,52 @@ body {
     text-decoration: underline;
 }
 
+.pub_status {
+    display: inline;
+    font-size: 0.9em;
+    font-weight: 700;
+    color: #333;
+}
+
+.pub_info {
+    position: relative;
+    display: inline-block;
+    margin-left: 4px;
+    color: #888;
+    cursor: help;
+    outline: none;
+}
+
+.pub_info:hover,
+.pub_info:focus {
+    color: #2c5fd4;
+}
+
+.pub_info_pop {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 260px;
+    max-width: calc(100vw - 32px);
+    box-sizing: border-box;
+    text-align: left;
+    padding: 8px 12px;
+    background: #222;
+    color: #fff;
+    font-size: 0.85em;
+    font-weight: 400;
+    line-height: 1.45;
+    border-radius: 4px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+    z-index: 10;
+}
+
+.pub_info:hover .pub_info_pop,
+.pub_info:focus .pub_info_pop {
+    display: block;
+}
+
 /* ── Skills ─────────────────────────────────── */
 .skills_list {
     display: flex;
