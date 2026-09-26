@@ -190,7 +190,7 @@ body {
     position: fixed;
     top: 0;
     left: 0;
-    width: 260px;
+    width: 640px;
     max-width: calc(100vw - 32px);
     box-sizing: border-box;
     text-align: left;
@@ -203,6 +203,14 @@ body {
     border-radius: 4px;
     box-shadow: 0 4px 16px rgba(0,0,0,0.2);
     z-index: 10;
+}
+
+.pub_info_img {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin-top: 8px;
+    border-radius: 2px;
 }
 
 .pub_info:hover .pub_info_pop,
